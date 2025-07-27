@@ -1,21 +1,41 @@
-# lite-llm-tool-agent
-A minimal Python agent that calls its own tools (list, read, terminate) using LiteLLM, ready to run locally or in Google Colab.
+# 🔧 LiteLLM Tool Agent
 
-# Tool Agent Demo with LiteLLM
-This is a minimal Python AI agent that interacts with its environment by calling tools (functions). It uses [LiteLLM](https://github.com/BerriAI/litellm) to interface with OpenAI models like `gpt-4o`.
+> A minimal Python AI agent that performs real tasks by calling Python functions (aka tools).  
+> Built using [LiteLLM](https://github.com/BerriAI/litellm) with full support for tool-calling, memory, and safe termination.
 
-## 🔧 Features
-- 📁 Lists files in the directory
-- 📖 Reads contents of a file
-- ✅ Terminates with a final message
+![MIT License](https://img.shields.io/badge/license-MIT-green)
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 
-## 🚀 How to Run
-> This project runs in both **local environments** and **Google Colab**.
+---
 
-### 🚀 Run in Google Colab (Recommended)
-1. Click the “Open in Colab” badge (or [open the notebook directly](#) if you’ve cloned the repo).
-2. Store your OpenAI key securely in Colab by running:
+## 🤖 What This Project Does
+
+This script demonstrates how to build a **tool-using AI agent** that:
+- 📁 Lists files in the current working directory
+- 📖 Reads the contents of a selected file
+- ✅ Gracefully terminates itself with a summary message
+
+It simulates a minimal autonomous AI system using OpenAI's GPT-4o via LiteLLM's simple Python SDK.
+
+---
+
+## 🧠 Agent Workflow
+
+1. The user gives a task (e.g., “Read the README”)
+2. The agent first lists available files
+3. It then reads the specified file
+4. It ends by summarizing the task and terminating itself
+
+---
+
+## 🧪 How to Run
+
+> **Recommended**: Run this in Google Colab — no local setup needed!
+
+### ✅ Google Colab (Easy)
+1. Open this repo in [Google Colab](https://colab.research.google.com/)
+2. Store your API key privately:
    ```python
    from google.colab import userdata
-   userdata.set('OPENAI_API_KEY', 'sk-...')
+   userdata.set("OPENAI_API_KEY", "sk-...")
 
